@@ -67,7 +67,7 @@ cor escura #eca660*/
 .receitas {
   padding: 0% 5% 0 5%;    
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
   gap: 20px;
   margin-top: 10%;
 }
@@ -76,8 +76,17 @@ cor escura #eca660*/
   background-color: #161B22;
   border: 2px solid #58A6FF;
   border-radius: 10px;
-  padding: 10px;
+  padding: 15px;
   box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.receita:hover {
+  transform: scale(1.03);
+  box-shadow: 4px 4px 16px rgba(0,0,0,0.4);
 }
 
 .receita img {
