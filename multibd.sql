@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13/06/2025 às 13:54
+-- Tempo de geração: 18/06/2025 às 15:42
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.0.30
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `multibd`
 --
-CREATE DATABASE IF NOT EXISTS `multibd` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `multibd`;
 
 -- --------------------------------------------------------
 
@@ -56,15 +54,16 @@ CREATE TABLE `cliente` (
   `cpf` varchar(14) NOT NULL,
   `email` varchar(50) NOT NULL,
   `telefone` varchar(20) NOT NULL,
-  `senha` varchar(25) NOT NULL
+  `senha` varchar(25) NOT NULL,
+  `cep` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `cliente`
 --
 
-INSERT INTO `cliente` (`id`, `nome`, `cpf`, `email`, `telefone`, `senha`) VALUES
-(1, 'o colecionador', '98765432100', 'user@gmail.com', '19912345678', 'user');
+INSERT INTO `cliente` (`id`, `nome`, `cpf`, `email`, `telefone`, `senha`, `cep`) VALUES
+(1, 'o colecionador', '98765432100', 'user@gmail.com', '19912345678', 'user', NULL);
 
 -- --------------------------------------------------------
 
