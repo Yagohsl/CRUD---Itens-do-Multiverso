@@ -53,7 +53,18 @@ $produtos = $stmt->fetchAll();
 
   <body>
 
-  
+  <div class="carousel" mask>
+  <?php foreach ($produtos as $p): ?>
+    <article>
+      <img src="data:image/jpeg;base64,<?= base64_encode($p['imagem']) ?>" alt="<?= htmlspecialchars($p['nome']) ?>">
+      <h2><?= htmlspecialchars($p['nome']) ?></h2>
+      <div>
+        <p><?= nl2br(htmlspecialchars($p['descricao'])) ?></p>
+        <a href="#">Ver mais</a>
+      </div>
+    </article>
+  <?php endforeach; ?>
+</div>
 
   <div class="receitas">
     <?php foreach ($produtos as $p): ?>
