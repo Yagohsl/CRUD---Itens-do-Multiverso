@@ -1,4 +1,6 @@
 <?php
+require_once '../db/db.php'; 
+
 // Variáveis do formulário
 $nome = $cpf = $email = $telefone = $senha = "";
 $cep = $rua = $bairro = $cidade = "";
@@ -38,10 +40,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    // Aqui você pode colocar o código para salvar os dados quando clicar em "Salvar"
-    if (isset($_POST['salvar'])) {
-        // Código para salvar os dados no banco, etc.
+
+   if (isset($_POST['salvar'])) {
+    $cep = preg_replace('/\D/', '', $_POST['cep'] ?? "");
+    $rua = $_POST['rua'] ?? '';
+    $bairro = $_POST['bairro'] ?? '';
+    $cidade = $_POST['cidade'] ?? '';
+
+    try {
+        $stmt = $pdo->prepare("INSERT INTO cliente (nome, cpf, email, telefone, senha, cep) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$nome, $cpf, $email, $telefone, $senha, $cep]);
+
+        header("Location: ../index.php");
+        exit;
+    } catch (PDOException $e) {
+        $erro = "Erro ao cadastrar: " . $e->getMessage();
     }
+}
+
 }
 ?>
 
@@ -79,6 +95,10 @@ include '../navbar/nav_bar.php';
             <label for="email" class="form-label label-painel">Email</label>
             <input type="email" name="email" id="email" class="form-control input-painel" maxlength="50" required value="<?= htmlspecialchars($email) ?>">
         </div>
+          <div class="mb-3 ">
+            <label for="senha" class="form-label label-painel">Senha</label>
+            <input type="password" name="senha" id="senha" class="form-control" maxlength="25" required value="<?= htmlspecialchars($senha) ?>">
+        </div>
         <div class="mb-3 ">
             <label for="telefone" class="form-label label-painel">Telefone</label>
             <input type="tel" name="telefone" id="telefone" class="form-control input-painel" maxlength="20" required value="<?= htmlspecialchars($telefone) ?>">
@@ -105,14 +125,33 @@ include '../navbar/nav_bar.php';
             <input type="text" name="cidade" id="cidade" class="form-control input-painel" readonly value="<?= htmlspecialchars($cidade) ?>">
         </div>
 
-        <div class="mb-3 ">
-            <label for="senha" class="form-label label-painel">Senha</label>
-            <input type="password" name="senha" id="senha" class="form-control" maxlength="25" required value="<?= htmlspecialchars($senha) ?>">
-        </div>
+      
 
         <button type="submit" name="salvar" class="buscar btn-buscar">Salvar</button>
     </form>
-    
+    <script>
+  document.getElementById('cep').addEventListener('blur', function () {
+    const cep = this.value.replace(/\D/g, '');
+
+    if (cep.length === 8) {
+      fetch(`https://viacep.com.br/ws/${cep}/json/`)
+        .then(response => response.json())
+        .then(data => {
+          if (!data.erro) {
+            document.getElementById('rua').value = data.logradouro;
+            document.getElementById('bairro').value = data.bairro;
+            document.getElementById('cidade').value = data.localidade;
+          } else {
+            alert('CEP não encontrado.');
+          }
+        })
+        .catch(() => alert('Erro ao buscar o CEP.'));
+    } else {
+      alert('CEP inválido.');
+    }
+  });
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

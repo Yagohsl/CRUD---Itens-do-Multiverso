@@ -1,3 +1,5 @@
+
+
 <?php
 // Variáveis para preencher os campos com os dados da API, se já foram buscados
 $cep = $rua = $bairro = $cidade = "";
