@@ -4,7 +4,7 @@
 <img src="http://img.shields.io/static/v1?label=STATUS&message=FINALIZADO&color=191970&style=for-the-badge"/>
 </p>
 <h1></h1>
-O projeto foi desenvolvido por mim e meus amigos Letícia Robles, Daniel Henrique e Amon Lucena, para um trabalho da faculdade onde precisávamos criar uma espécie de <b>Ecommerce</b>
+O projeto foi desenvolvido por mim e meus amigos Letícia Robles, Daniel Henrique e Amon Lucena, para um trabalho da faculdade onde precisávamos criar uma espécie de Ecommerce no qual precisávamos integrar uma <b>API de consultar CEP</b>
 <br><br>
 O projeto consiste em um CRUD (Create, Read, Update, Delete) com cadastro, busca e filtragem de produtos. O foco do Ecommerce eram artefatos especiais da ficção, itens famosos da cultura pop 🎥
 
@@ -12,8 +12,9 @@ O projeto consiste em um CRUD (Create, Read, Update, Delete) com cadastro, busca
 <ul>
   <li>📝Listagem de produtos</li>
   <li>🔒Página de login para administradores</li>
+  <li>🗺️API para consultar CEP</li>
   <li>🔍Barra de busca</li>
-  <li>🎠Carrossel de produtos</li>
+  <li>✏️Adição, remoção e edição de produtos</li>
   <li>🗃️Filtragem de produtos baseada por categoria</li>
 </ul>
 <h2 align="center">💻Tecnologias usadas</h2>
@@ -53,5 +54,28 @@ O projeto consiste em um CRUD (Create, Read, Update, Delete) com cadastro, busca
 
 <h2 align="center">Cadastro</h2>
 
+![cadastro](https://github.com/user-attachments/assets/7a2d16f3-cd97-4297-a081-2cd11370e33d)
+<br><br>
+<h4>Na seção de cadastro o usuário digita suas informações para criar conta. Esta é a parte que a API para consulta de CEP entra em ação! Basta digitar o CEP no campo e clicar em "Buscar CEP"</h4>
 
+<h2 align="center">Painel Administrativo - Adicionar Produto</h2>
 
+![adicionar](https://github.com/user-attachments/assets/4ad4a71e-e7fa-4936-98f0-8e282ff54370)
+<br><br>
+<h4>No campo de adicionar produto é preciso especificar o nome do produto, selecionar sua categoria caso já exista no site ou criar uma nova, informar o preço, descrição e foto do produto</h4>
+
+<h2 align="center">Painel Administrativo - Deletar Produto</h2>
+
+![deletar](https://github.com/user-attachments/assets/9a617b72-c22c-48f9-92d1-2abc9a967158)
+<br><br>
+<h4>No campo de deletar produto haverá uma lista dos produtos cadastrados e seus respectivos IDs, para remover um produto basta digitar seu ID no campo de deletar</h4>
+
+<h2 align="center">Painel Administrativo - Editar Produto</h2>
+
+![editar](https://github.com/user-attachments/assets/6283eb1e-7986-4e5c-98ad-a7cf6d6d754e)
+<br><br>
+<h4>No campo de editar produto é preciso especificar o ID do produto a ser editado, logo aparecerá um formulário para preencher as novas características do produto</h4>
+
+<h1></h1>
+
+<h4>Estas foram as partes principais do projeto. Se quiser explorar mais, contribuir ou utilizá-lo fique à vontade!</h4>
