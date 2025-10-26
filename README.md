@@ -1,4 +1,4 @@
-![categoria](https://github.com/user-attachments/assets/fb34928b-2a6e-4979-ab1f-e1588382ee9a)<h1 align="center">CRUD - Multishop</h1>
+<h1 align="center">CRUD - Multishop</h1>
 <h2 align="center">Itens do Multiverso 💫</h2>
 <p align="center">
 <img src="http://img.shields.io/static/v1?label=STATUS&message=FINALIZADO&color=191970&style=for-the-badge"/>
