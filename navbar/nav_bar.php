@@ -24,8 +24,8 @@ if ($tipo_navbar === 'completa'): ?>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Usuário</a>
           <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="./usuario/login.php">Login</a></li>
-          <li><a class="dropdown-item" href="./usuario/cadastro.php">Cadastro</a></li>
+          <li><a class="dropdown-item" href="../usuario/login.php">Login</a></li>
+          <li><a class="dropdown-item" href="../usuario/cadastro.php">Cadastro</a></li>
           </ul>
         </li>
 
@@ -65,7 +65,7 @@ if ($tipo_navbar === 'completa'): ?>
 <?php elseif ($tipo_navbar === 'simples'): ?>
 <nav class="navbar navbar-expand-lg sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="../index.php">MultiShop</a>
+    <a class="navbar-brand" href="../home/index.php">MultiShop</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
